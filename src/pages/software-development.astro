@@ -5,34 +5,13 @@ import Sidebar from "../components/Sidebar.astro";
 const projects = [
   {
     title: "Video de Presentación",
-    <iframe width="560" height="315" src="https://youtu.be/dmlQrWElLTY?si=DgBFcy9Du-CDMc-W" frameborder="0" allowfullscreen></iframe>
+    video: "https://www.youtube.com/embed/dmlQrWElLTY",
     desc: [
-      "Developed a large-scale e-commerce platform for indie game developers",
-      "Designed and implemented UI, backend, and database architecture",
-      "Contributed to RESTful API and GraphQL design",
-      "Led a team of three engineers for several months"
+      "Video de presentación personal",
+      "Resumen académico y profesional"
     ],
-    tech: ["React", "Next.js", "Node.js", "MongoDB", "Heroku"]
-  },
-  {
-    title: "CloudMason",
-    desc: [
-      "Contributed to microservices architecture design for email distribution system",
-      "Created a backend infrastructure with queues and an event bus",
-      "Designed to handle a high volume ~3 million emails per day"
-    ],
-    tech: ["Node.js", "RabbitMQ", "Docker", "Kubernetes"]
-  },
-  {
-    title: "Sarah (HealthEase.io)",
-    desc: [
-      "Contributed to Israel's largest telehealth platform for doctors and patients",
-      "Developed appointment and billing systems",
-      "Resolved live production bugs and server issues"
-    ],
-    tech: ["React", "Node.js", "Express.js", "MySQL", "AWS"]
-  }
-];
+    tech: ["YouTube"]
+  };
 ---
 
 <!DOCTYPE html>
@@ -59,6 +38,7 @@ const projects = [
                         title={project.title} 
                         desc={project.desc}
                         tech={project.tech}
+                        video={project.video}
                       />
                     ))}
                   </div>

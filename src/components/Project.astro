@@ -1,9 +1,21 @@
 ---
-const { title, desc, tech, link } = Astro.props;
+const { title, desc, tech, link, video } = Astro.props;
 ---
 
 <div class="single-item">
   <h3>{title}</h3>
+
+  {video && (
+    <div class="video-container">
+      <iframe
+        width="560"
+        height="315"
+        src={video}
+        frameborder="0"
+        allowfullscreen>
+      </iframe>
+    </div>
+  )}
 
   {link && (
     <a href={link} target="_blank" class="github-link">
@@ -17,8 +29,9 @@ const { title, desc, tech, link } = Astro.props;
     </ul>
   </div>
 
-  <div class="mini-label-white">Technologies &amp; tools</div>
+  <div class="mini-label-white">Technologies & tools</div>
   <div class="chips-container">
     {tech.map(techItem => <div class="single-chip">{techItem}</div>)}
   </div>
 </div>
+
